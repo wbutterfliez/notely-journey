@@ -5,9 +5,10 @@ import React from 'react'
 import { Button } from './button';
 import DarkModeToggle from "./DarkModeToggle";
 import LogoutButton from './LogoutButton';
+import { getUser } from '@/auth/server';
 
-function Header() {
-  const user = 1;
+async function Header() {
+  const user = await getUser();
 
   return (
     <header className='flex relative h-24 w-full items-center justify-between bg-popover px-3 sm:px-8'
