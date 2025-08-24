@@ -3,16 +3,18 @@ import React, { use, useState } from 'react'
 import { Button } from './button'
 import { Loader, Loader2 } from 'lucide-react'
 import { toast } from "sonner"
+import { useRouter } from 'next/navigation';
+import { log } from 'console';
+import { logOutAction } from '@/actions/users';
 
-function LogoutButton() {
+function LogOutButton() {
+    const router = useRouter();
     const [loading, setLoading] = useState(false);
 
     const handleLogout = async () => {
         setLoading(true)
 
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
-        const errorMsg = null;
+        const {errorMsg} = await logOutAction();
 
         if (!errorMsg) {
             toast.success("Logged Out", {
@@ -38,7 +40,7 @@ function LogoutButton() {
   )
 }
 
-export default LogoutButton
+export default LogOutButton
 
 function useToast(): { toast: any; } {
     throw new Error('Function not implemented.');

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './button';
 import DarkModeToggle from "./DarkModeToggle";
-import LogoutButton from './LogoutButton';
+import LogoutButton from './LogOutButton';
 import { getUser } from '@/auth/server';
 
 async function Header() {
