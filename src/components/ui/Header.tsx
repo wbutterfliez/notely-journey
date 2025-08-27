@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './button';
 import DarkModeToggle from "./DarkModeToggle";
-import LogoutButton from './LogOutButton';
+import LogOutButton from './LogOutButton';
 import { getUser } from '@/auth/server';
 import { SidebarTrigger } from './sidebar';
 
@@ -26,7 +26,7 @@ async function Header() {
 
         <div className='flex gap-4'>
           {user ? (
-            <LogoutButton />
+            <LogOutButton />
           ) : (
             <>
             <Button asChild>
