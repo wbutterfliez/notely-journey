@@ -1,6 +1,5 @@
 "use server";
 
-import { GoogleGenAI } from "@google/genai";
 import { getUser } from "@/auth/server";
 import { prisma } from "@/db/prisma";
 import { handleError } from "@/lib/utils";
@@ -81,7 +80,7 @@ export const askAIAboutNotesAction = async (
         `.trim(),
     ).join("\n");
 
-    let contents = [
+    const contents = [
         {
         role: "user",
         parts: [

@@ -1,10 +1,9 @@
 "use client";
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from './button'
-import { Loader, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { toast } from "sonner"
 import { useRouter } from 'next/navigation';
-import { log } from 'console';
 import { logOutAction } from '@/actions/users';
 
 function LogOutButton() {
@@ -41,7 +40,3 @@ function LogOutButton() {
 }
 
 export default LogOutButton
-
-function useToast(): { toast: any; } {
-    throw new Error('Function not implemented.');
-}
