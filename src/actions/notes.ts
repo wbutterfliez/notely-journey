@@ -107,7 +107,6 @@ export const askAIAboutNotesAction = async (
         }
     }
 
-    // Call Gemini
     const result = await genai.models.generateContent({
         model: "gemini-1.5-flash",
         contents,
